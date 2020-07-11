@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <script>
+        var time;
+        var i = 0;
+        var images = [];
+        images[1] = 'images/2.jpg';
+        images[0] = 'images/1.jpg';
+        images[2] = 'images/3.jpg';
+        images[3] = 'images/4.jpg';
+        images[4] = 'images/5.jpg';
+        images[5] = 'images/6.jpg';
+        images[6] = 'images/7.jpg';
+        images[7] = 'images/8.jpg';
+        images[8] = 'images/9.jpg';
+        images[9] = 'images/10.jpg';
+
+        function slideshow() {
+            time = document.getElementById("userTime").value;
+            console.log(time);
+            document.slideImage.src = images[i];
+            if (i < images.length - 1 && time > 0) {
+                i++;
+            } else {
+                i = 0;
+            }
+            setTimeout("slideshow()", time);
+        }
+
+        function calculator(input) {
+            a = document.getElementById("inputA").value;
+            b = document.getElementById("inputB").value;
+            var x = document.getElementById("out");
+            var y = document.getElementById('sign');
+            console.log(input);
+            if (isNaN(a) || isNaN(b)) {
+                text = "Input not valid";
+            } else {
+                text = "Input Valid";
+            }
+            document.getElementById("demo").innerHTML = text;
+            if (input == '+') {
+                x.innerHTML = parseInt(a) + parseInt(b);
+                y.innerHTML = '+';
+            } else if (input == '-') {
+                x.innerHTML = parseInt(a) - parseInt(b);
+                y.innerHTML = '-';
+            } else if (input == '/') {
+                x.innerHTML = parseInt(a) / parseInt(b);
+                y.innerHTML = '/';
+            } else {
+                x.innerHTML = parseInt(a) * parseInt(b);
+                y.innerHTML = '*';
+            }
+            console.log(x);
+        }
+
+        function ValidateEmail() {
+            var inputText=document.getElementById('email').value;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.match(mailformat)) {
+                document.getElementById('email').style.backgroundColor = "green";
+            } else {
+                document.getElementById('email').style.backgroundColor = "red";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table style="width:100%">
+        <tr style='max-width: 50%;'>
+            <td width="50%">
+                <input type="number" id="userTime" value='1'>
+                <button onclick="slideshow()">Submit</button>
+            </td>
+            <td><img name='slideImage' src="images/1.jpg" style="max-width: 200px; max-height: auto;"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type='number' id='inputA' placeholder="input 1">
+                <span id="sign"></span>
+                <input type='number' id="inputB" placeholder="input 2">
+                <br>
+                <p id='demo'></p><br>
+                <button onclick="calculator('+')">Addition +</button>
+                <button onclick="calculator()">Subtraction -</button>
+                <button onclick="calculator()">Division /</button>
+                <button onclick="calculator()">Multiplication *</button>
+            </td>
+            <td>
+                <p id='out'></p>
+            </td>
+        </tr>
+        <tr>
+            <td><input id='email' onchange="ValidateEmail()"></td>
+            
+        </tr>
+    </table>
+
+</body>
+
+</html>
