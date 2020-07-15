@@ -12,3 +12,6 @@ https://ansel2000.github.io/SFIT-WebDev/bootstrap/
 ### Java Script
 This folder contains the submissions for the session conducted by Ms. Jayashri Mittal 
 https://ansel2000.github.io/SFIT-WebDev/javascript/index.html
+
+### PHP
+This folder contains the submissions for the session conducted by Ms. Varsha Nagpurkar
