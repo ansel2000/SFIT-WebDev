@@ -15,3 +15,6 @@ https://ansel2000.github.io/SFIT-WebDev/javascript/index.html
 
 ### PHP
 This folder contains the submissions for the session conducted by Ms. Varsha Nagpurkar
+
+### Django/my_portfolio_website
+This folder contains the submissions for the session conducted by Mr. Soham Thaker
