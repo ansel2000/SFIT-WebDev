@@ -7,8 +7,8 @@ from my_contact_data.models import ContactForm
 def home(request):
     return render(request,'my_contact_data/home.html')
 
-def aboutus(request):
-    return render(request,'my_contact_data/aboutus.html')
+def portfolio(request):
+    return render(request,'my_contact_data/portfolio.html')
 
 def contactus(request):
     my_contact_form_data = ContactForm.objects.all()
